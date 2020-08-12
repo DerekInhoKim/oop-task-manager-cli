@@ -15,6 +15,7 @@ class State {
   // this.filePath.
   loadFromJson(data) {
     // TODO: Load this object from the data
+
   }
 
   // TODO: Your code, here, to manage the state

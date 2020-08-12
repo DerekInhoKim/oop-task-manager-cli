@@ -9,6 +9,7 @@ class ManageCategoriesScreen {
   constructor(rl, state) {
     this.rl = rl;
     this.state = state;
+
   }
 
   printUi() {
@@ -20,6 +21,12 @@ class ManageCategoriesScreen {
 
     // TODO: Print all five category names with a one-based index
     //       like in the screen mockup in the project description.
+    const categoriesArray = ["Category 1", "Category 2", "Category 3", "Category 4", "Category 5"]
+    for (let i = 0; i < categoriesArray.length; i++){
+      let ele = categoriesArray[i]
+      console.log((i + 1) + `. ${ele}`)
+    }
+
 
     console.log();
     console.log("X. Go to main screen");
