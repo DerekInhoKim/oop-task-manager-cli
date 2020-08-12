@@ -7,6 +7,7 @@ class State {
   constructor(filePath) {
     this.filePath = filePath;
 
+
     // TODO: Any other initialization that you need.
   }
 
