@@ -26,20 +26,33 @@ class SearchScreen {
     console.log("********************************************");
     console.log("* SEARCH RESULTS                (c) 1987   *");
     console.log("********************************************");
-    console.log();
+    console.log(); // search > to-do items text-values (both notes and task items), compare to term // if blah blah more than one, worry later // category items shouldnt be 'test fields'
     console.log("Your search matches");
     console.log();
+    console.log();
+  }
+
+  compareSearchWords(term, toDoEntries) {
+// data => array of strings, each string one entry?
+    let onlyMatchingEntries = toDoEntries.filter(function (todoEntry) { // TODO BOTTOM if todo-item has 'more than one text field', search then
+      if (todoEntry.includes(term)) {
+        return true;
+      };
+    });
+    // Filter to make an array of only item titles
+    return onlyMatchingEntries; // These are the item TITLES, not contents
+  };
+//  Create note page - user inputs text value, this is saved => compare to 'term' search value
 
     // TODO: Search the items as described in the requirements with
     //       the value stored in term. Print all of the matching
     //       items, complete and incomplete alike.
 
-    console.log();
-  }
 
   show() {
     this.printUi();
     this.rl.question("> ", term => {
+      //compareSearchWords(term, /*data from */);
       this.printResultsUi(term);
       this.rl.question("Enter to return to the main screen. ", () => {
         const screen = new MainScreen(this.rl, this.state);
